@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studenți și Echipe</title>
+  <script>
+    function showStudents() {
+      document.getElementById("studentsTable").style.display = "block";
+    }
+  </script>
+</head>
+<body>
+<h1>Studenți și Echipe</h1>
+
+<button onclick="showStudents()">Afișează Studenții și Echipele</button>
+
+<table id="studentsTable" style="display: none; margin-top: 20px;">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nume</th>
+    <th>Prenume</th>
+    <th>Data Nașterii</th>
+    <th>CNP</th>
+    <th>An de Studiu</th>
+    <th>Telefon</th>
+    <th>Sex</th>
+    <th>Echipa</th>
+    <th>Facultate</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr th:each="student : ${students}">
+    <td th:text="${student.id}"></td>
+    <td th:text="${student.nume}"></td>
+    <td th:text="${student.prenume}"></td>
+    <td th:text="${student.dataNasterii}"></td>
+    <td th:text="${student.cnp}"></td>
+    <td th:text="${student.anStudiu}"></td>
+    <td th:text="${student.telefon}"></td>
+    <td th:text="${student.sex}"></td>
+    <td th:text="${student.idEchipa.numeEchipa}"></td>
+    <td th:text="${student.idFacultate.numeFacultate}"></td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
